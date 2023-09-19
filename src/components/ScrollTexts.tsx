@@ -1,23 +1,57 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function ScrollTexts() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+  const sectionScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
+  const h1Left = useTransform(scrollYProgress, [0, 1], ["0em", "-5em"]);
+  const h2Left = useTransform(scrollYProgress, [0, 1], ["0em", "-6em"]);
+  const h3Left = useTransform(scrollYProgress, [0, 1], ["0em", "-7em"]);
+  const h4Left = useTransform(scrollYProgress, [0, 1], ["0em", "-8em"]);
+
+  function getPreferredLeft(className: string) {
+    switch (className) {
+      case "h1":
+        return h1Left;
+      case "h2":
+        return h2Left;
+      case "h3":
+        return h3Left;
+      case "h4":
+        return h4Left;
+    }
+  }
+
   return (
-    <section className="flex flex-col w-full overflow-x-clip bg-gradient-to-b from-black">
+    <motion.section
+      ref={sectionRef}
+      style={{
+        scale: sectionScale
+      }}
+      className="flex flex-col w-full overflow-x-clip bg-gradient-to-b from-black"
+    >
       {developerQualities.map((quality, index) =>
         <motion.p
           initial={{ translateX: quality.before, opacity: 0 }}
           animate={{ translateX: quality.after, opacity: 1 }}
+          style={{
+            left: getPreferredLeft(quality.className)
+          }}
           transition={{
             duration: 2
           }}
           key={index}
-          className={`${quality.className} whitespace-nowrap text-light1`}
+          className={`${quality.className} whitespace-nowrap text-light1 relative`}
           dangerouslySetInnerHTML={{ __html: quality.text }}
         />
       )}
-    </section>
+    </motion.section>
   );
 }
 
