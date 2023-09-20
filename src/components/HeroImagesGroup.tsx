@@ -1,13 +1,12 @@
 "use client";
-import { memo, useRef } from "react";
-import useBoundingClientRect from "@/hooks/useBoundingClientRect";
+import { RefObject, memo } from "react";
+import { motion } from "framer-motion";
+import HeroImageGroupCard from "./HeroImageGroupCard";
 export default memo(function HeroImagesGroup() {
-  const { top, ref } = useBoundingClientRect();
   return (
-    <article
-      onClick={() => alert(top)}
-      ref={ref}
-      className="flex gap-1 [perspective:1000px]"
+    <motion.article
+      {...bounceUpAnimations}
+      className="flex gap-1 [perspective:1000px] relative"
     >
       <div className="w-4/12 flex flex-col gap-1 [perspective:1000px]">
         <HeroImageGroupCard />
@@ -22,12 +21,23 @@ export default memo(function HeroImagesGroup() {
         <HeroImageGroupCard />
         <HeroImageGroupCard />
       </div>
-    </article>
+    </motion.article>
   );
 });
 
-const HeroImageGroupCard = () => {
-  return (
-    <div className="bg-dark border-2 border-[#ffffff11] rounded shadow-lg h-80 [transform:rotateY(10deg)]" />
-  );
+export const bounceUpAnimations = {
+  initial: {
+    opacity: 0,
+    translateY: 200
+  },
+  animate: {
+    opacity: 1,
+    translateY: 0
+  },
+  transition: {
+    delay: 1.2,
+    damping: 7,
+    stiffness: 150,
+    type: "spring"
+  }
 };
