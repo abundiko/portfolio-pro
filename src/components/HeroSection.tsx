@@ -34,12 +34,12 @@ export default function HeroSection() {
           scale: 0.7,
           opacity:0
         }}
-        {...{...bounceUpAnimations}}
+        {...bounceUpAnimations}
         transition={{
           delay: 0,
         }}
          className="absolute top-[70vh] left-[10vw] w-4/12">
-          <div className="p-5 shadow-lg rounded-lg border border-[#ffffff11] bg-dark backdrop-blur-lg bg-opacity-10 text-light bg-gradient-to-tr from-[#ffffff22]">
+          <div className="p-5 shadow-black shadow-lg rounded-lg border border-[#ffffff11] bg-dark backdrop-blur-lg bg-opacity-10 text-light bg-gradient-to-tr from-[#ffffff22]">
             <h1 className="font-bold text-lg">
               About Me
             </h1>

@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "completed animated text section"
+git commit -m "added images group section"
 
 git push origin main
