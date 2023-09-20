@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 
-export default function ScrollTexts() {
+export default memo(function ScrollTexts() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -31,10 +31,7 @@ export default function ScrollTexts() {
   return (
     <motion.section
       ref={sectionRef}
-      style={{
-        scale: sectionScale
-      }}
-      className="flex flex-col w-full overflow-x-clip bg-gradient-to-b from-black"
+      className="flex flex-col w-full overflow-x-clip bg-gradient-to-b from-black z-[1]"
     >
       {developerQualities.map((quality, index) =>
         <motion.p
@@ -53,7 +50,7 @@ export default function ScrollTexts() {
       )}
     </motion.section>
   );
-}
+});
 
 interface DeveloperQuality {
   text: string;
