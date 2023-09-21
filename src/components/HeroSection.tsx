@@ -7,6 +7,8 @@ import HeroImagesGroup, { bounceUpAnimations } from "./HeroImagesGroup";
 import ScrollTexts from "./ScrollTexts";
 import {LegacyRef, useEffect, useRef } from 'react'
 import { AnimatePresence, motion } from "framer-motion";
+import AboutCard from "./AboutCard";
+import SkillsCard from "./SkillsCard";
 
 export default function HeroSection() {
     const [ref, rect, updateRect] = useBoundingClientRect();
@@ -22,32 +24,18 @@ export default function HeroSection() {
     );
   return (
     <HeroContextProvider>
-      {/* <BackCursor /> */}
+      <BackCursor />
       <section onLoad={()=>updateRect} onClick={()=>{console.log(rect?.top);
       }} className="w-full relative overflow-hidden h-fit z-[1]">
         <ScrollTexts />
-        <AnimatePresence mode="sync">
+        <AnimatePresence>
         {
-          (rect?.top && rect?.top <= 200) &&
-        <motion.div
-        exit={{
-          scale: 0.7,
-          opacity:0
-        }}
-        {...bounceUpAnimations}
-        transition={{
-          delay: 0,
-        }}
-         className="absolute top-[70vh] left-[10vw] w-4/12">
-          <div className="p-5 shadow-black shadow-lg rounded-lg border border-[#ffffff11] bg-dark backdrop-blur-lg bg-opacity-10 text-light bg-gradient-to-tr from-[#ffffff22]">
-            <h1 className="font-bold text-lg">
-              About Me
-            </h1>
-            <p className="text-sm pt-3 opacity-80">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero soluta obcaecati nulla fuga ipsam delectus, eveniet suscipit quaerat enim dolorem, architecto laborum vitae sunt ex, inventore vel dolor rerum omnis. Sunt adipisci quod voluptatem odit ad quae amet, laudantium vitae recusandae quos, tempore harum, eum eos alias voluptates sequi accusamus?
-            </p>
-          </div>
-        </motion.div> 
+          (rect?.top && rect?.top <= (window.innerHeight / 4)) &&
+          <AboutCard key={"ABOUT_CARD"} />
+        }
+        {
+          (rect?.top && rect?.top <= (window.innerHeight - ((window.innerHeight / 7) * 7.2))) &&
+          <SkillsCard key={"SKILLS_CARD"} />
         }
         </AnimatePresence>
         <div  ref={ref as LegacyRef<HTMLDivElement>} className="absolute top-[60vh] right-[10vw] w-5/12">

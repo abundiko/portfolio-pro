@@ -15,8 +15,8 @@
   .h4 {
     @apply text-2xl font-extrabold
   }
-.a{
-
-  color: #ff3e3e;
 }
+
+.big-shadow{
+  box-shadow: 1em 1em 150px 1em #ffffff11;
 }

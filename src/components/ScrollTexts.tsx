@@ -31,7 +31,7 @@ export default memo(function ScrollTexts() {
   return (
     <motion.section
       ref={sectionRef}
-      className="flex flex-col w-full overflow-x-clip bg-gradient-to-b from-black z-[1]"
+      className="flex flex-col w-full overflow-x-clip bg-gradient-to-b from-black via-transparent to-black z-[1]"
     >
       {developerQualities.map((quality, index) =>
         <motion.p
@@ -191,6 +191,27 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Thorough code inspector, detecting even the tiniest bugs and ensuring robustness.",
     className: "h3",
+    before: "-10em",
+    after: "0em"
+  },
+  {
+    text:
+      "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
+    className: "h4",
+    before: "-10em",
+    after: "0em"
+  },
+  {
+    text:
+      "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
+    className: "h2",
+    before: "-10em",
+    after: "0em"
+  },
+  {
+    text:
+      "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
+    className: "h1",
     before: "-10em",
     after: "0em"
   },

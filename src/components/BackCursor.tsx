@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, memo } from "react";
 
 export default memo(function BackCursor() {
+  "use client";
   const backCursor = useRef<HTMLDivElement>(null);
 
   useEffect(
@@ -34,8 +35,8 @@ export default memo(function BackCursor() {
         <Image
           src="/images/hero-gradient.avif"
           alt="Portfolio Hero Image"
-          height={window.innerHeight}
-          width={window.innerWidth}
+          height={900}
+          width={1200}
           className="object-cover"
         />
       </div>
