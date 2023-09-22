@@ -31,7 +31,7 @@ export default memo(function ScrollTexts() {
   return (
     <motion.section
       ref={sectionRef}
-      className="flex flex-col w-[120%] translate-x-[-20%] sm:translate-x-[-14%] md:translate-x-[-10%] lg:translate-x-[-8%] overflow-x-clip bg-gradient-to-b from-black via-transparent to-black z-[1]"
+      className="ScrollTexts flex flex-col w-[160%] md:w-[120%] translate-x-[-22%] sm:translate-x-[-14%] md:translate-x-[-12%] lg:translate-x-[-8%] xl:translate-x-[-5%] overflow-x-clip bg-gradient-to-b from-black via-transparent to-black z-[1]"
     >
       {developerQualities.map((quality, index) =>
         <motion.p
@@ -45,8 +45,12 @@ export default memo(function ScrollTexts() {
           }}
           key={index}
           className={`${quality.className} whitespace-nowrap text-light1 relative`}
-          dangerouslySetInnerHTML={{ __html: quality.text }}
-        />
+        >
+          <span
+            className={`${quality.extraClassName} relative `}
+            dangerouslySetInnerHTML={{ __html: quality.text }}
+          />
+        </motion.p>
       )}
     </motion.section>
   );
@@ -55,6 +59,7 @@ export default memo(function ScrollTexts() {
 interface DeveloperQuality {
   text: string;
   className: string;
+  extraClassName?: string;
   before: number;
   after: number;
 }
@@ -64,6 +69,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Creative content writer, crafting engaging stories through code that captivate users.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -71,6 +77,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Tech enthusiast, always exploring the latest technologies to build innovative solutions.",
     className: "h3",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -78,6 +85,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Collaborative team player, bringing diverse perspectives together to create exceptional software.",
     className: "h3",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -85,13 +93,15 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Passionate lifelong learner, continuously expanding knowledge and embracing new challenges.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
   {
     text:
       'greeting: <span class="text-light">Hello World</span> Attention to detail perfectionist, ensuring flawless execution of every line of code.',
-    className: "h2",
+    className: "sm:h2 text-3xl font-extrabold",
+    extraClassName: "ps-[4em]  sm:ps-0",
     before: 0,
     after: -3
   },
@@ -99,13 +109,15 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       'devs call me <span class="text-primary-light">I Am</span>  unraveling complex puzzles and crafting elegant solutions.',
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0.2
   },
   {
     text:
       'my name is <span class="text-light">John Doe</span>. Innovative thinker, pushing boundaries and reimagining what\'s possible in software development.',
-    className: "h1",
+    className: "sm:h1 text-5xl font-extrabold",
+    extraClassName: "ps-[2.52em] sm:ps-0",
     before: -10,
     after: -5
   },
@@ -113,6 +125,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       'worked for many years in the field with different technologies I am a skilled <span class="text-primary-light opacity-30">Web Developer</span> Effective communicator, translating technical concepts into clear and concise language.',
     className: "h3",
+    extraClassName: "ps-5 md:ps-0",
     before: 0,
     after: -45
   },
@@ -120,6 +133,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Quality-driven developer, writing clean and maintainable code that stands the test of time.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -127,6 +141,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Adaptable quick learner, mastering new technologies with ease and adapting to any challenge.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -135,6 +150,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Solution-oriented professional, turning obstacles into opportunities for growth and success.",
     className: "h2",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -142,6 +158,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Collaborative problem solver, leveraging teamwork to achieve extraordinary results.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -149,6 +166,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Meticulous code reviewer, ensuring every line of code meets the highest standards of quality.",
     className: "h1",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -156,6 +174,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Proactive optimizer, constantly seeking ways to improve performance and efficiency.",
     className: "h2",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -163,6 +182,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Dedicated deadline achiever, delivering high-quality software on time, every time.",
     className: "h3",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -170,6 +190,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Curious knowledge seeker, always diving deeper to uncover new insights and possibilities.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -177,6 +198,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Innovative problem solver, finding creative and ingenious solutions to complex challenges.",
     className: "h1",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -184,6 +206,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "User-centric designer, crafting delightful and intuitive experiences for seamless interactions.",
     className: "h2",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -191,6 +214,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Thorough code inspector, detecting even the tiniest bugs and ensuring robustness.",
     className: "h3",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -198,6 +222,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -205,6 +230,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
     className: "h2",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -212,6 +238,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
     className: "h1",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   },
@@ -219,6 +246,7 @@ const developerQualities: Array<DeveloperQuality> = [
     text:
       "Performance-driven optimizer, continuously fine-tuning systems for peak efficiency.",
     className: "h4",
+    extraClassName: "ps-5 md:ps-0",
     before: -10,
     after: 0
   }

@@ -1,5 +1,5 @@
 "use client";
-import { RefObject, memo } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
 import HeroImageGroupCard from "./HeroImageGroupCard";
 export default memo(function HeroImagesGroup() {

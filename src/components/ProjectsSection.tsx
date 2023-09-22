@@ -10,7 +10,8 @@ import { fadeAnimation } from "./SkillsCard";
 export default function ProjectsSection() {
   const [showContact, setShowContact] = useState(false);
   return (
-    <section className="px-8 sm:px-10 md:px-20 lg:px-40 pt-40 bg-black shadow-lg shadow-black z-[2] relative flex flex-col items-center gap-10">
+    <section className="px-8 sm:px-10 md:px-20 lg:px-40 pt-32 bg-black shadow-lg shadow-black z-[2] relative flex flex-col items-center gap-10">
+      <h1 className="mb-10 text-3xl font-bold text-light">My Projects</h1>
       <LayoutGroup>
         {[4, 3, 2, 1].map(item => {
           const reverseIndex = item;

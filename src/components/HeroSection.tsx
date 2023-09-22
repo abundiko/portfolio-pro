@@ -38,7 +38,7 @@ export default function HeroSection() {
           <SkillsCard key={"SKILLS_CARD"} />
         }
         </AnimatePresence>
-        <div  ref={ref as LegacyRef<HTMLDivElement>} className="absolute invisible md:visible top-[60vh] right-[10vw] w-4/12 lg:w-5/12">
+        <div  ref={ref as LegacyRef<HTMLDivElement>} className="absolute invisible md:visible top-[30%] right-[8vw] lg:right-[10vw] w-4/12 lg:w-5/12">
           <HeroImagesGroup />
         </div>
       </section>

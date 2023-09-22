@@ -14,6 +14,12 @@ const config: Config = {
         dark: "#101010",
         primary: {
           light: "#ce18fb"
+        },
+        c:{
+          primary:"#6d3fcf",
+          secondary:"#31245a",
+          light:"#fbf8fe",
+          pink: "#e978b4"
         }
       },
       backgroundImage: {
