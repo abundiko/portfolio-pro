@@ -8,16 +8,16 @@ export default memo(function HeroImagesGroup() {
       {...bounceUpAnimations}
       className="flex gap-1 [perspective:1000px] relative"
     >
-      <div className="w-4/12 flex flex-col gap-1 [perspective:1000px]">
+      <div className="w-6/12 lg:w-4/12 flex flex-col gap-1 [perspective:1000px]">
         <HeroImageGroupCard />
         <HeroImageGroupCard />
       </div>
-      <div className="w-4/12 flex flex-col gap-1 [perspective:1000px] relative -top-40">
+      <div className="w-6/12 lg:w-4/12 flex flex-col gap-1 [perspective:1000px] relative -top-20 lg:-top-40">
         <HeroImageGroupCard />
         <HeroImageGroupCard />
         <HeroImageGroupCard />
       </div>
-      <div className="w-4/12 flex flex-col gap-1 [perspective:1000px]">
+      <div className="w-4/12 lg:flex flex-col gap-1 [perspective:1000px] hidden">
         <HeroImageGroupCard />
         <HeroImageGroupCard />
       </div>

@@ -10,7 +10,7 @@ import { fadeAnimation } from "./SkillsCard";
 export default function ProjectsSection() {
   const [showContact, setShowContact] = useState(false);
   return (
-    <section className="px-40 pt-40 bg-black shadow-lg shadow-black z-[2] relative flex flex-col items-center gap-10">
+    <section className="px-8 sm:px-10 md:px-20 lg:px-40 pt-40 bg-black shadow-lg shadow-black z-[2] relative flex flex-col items-center gap-10">
       <LayoutGroup>
         {[4, 3, 2, 1].map(item => {
           const reverseIndex = item;
@@ -18,8 +18,9 @@ export default function ProjectsSection() {
         })}
         {showContact &&
           <motion.div
-            initial={{ scale: 0.8 }}
+            initial={{ scale: 0.6 }}
             animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
             layoutId="contact"
             className="fixed top-0 left-0 rounded-lg bg-cover shadow w-full h-full bg-[url(/images/hero-gradient.jpg)] overflow-hidden"
           >
