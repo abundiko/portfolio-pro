@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "added images group section"
+git commit -m "made projects modular"
 
 git push origin main
