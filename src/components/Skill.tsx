@@ -3,7 +3,7 @@ import Image from "next/image";
 import { fadeAnimation } from "./SkillsCard";
 
 interface SkillProps {
-  name: string;
+  name?: string;
   icon: string;
   index: number;
 }
@@ -19,18 +19,20 @@ const Skill = ({ name, icon, index }: SkillProps) => {
         damping: 6,
         stiffness: 200
       }}
-      className="flex w-full py-2 flex-col gap-1 text-center items-center justify-center h-20 aspect-square rounded-lg bg-dark border border-[#ffffff11]"
+      className="flex w-full py-2 flex-col gap-1 text-center items-center justify-center aspect-square rounded-lg bg-dark border border-[#ffffff11]"
     >
       <Image
         src={`/images/icons/${icon}.png`}
-        alt={name}
+        alt={name??""}
         height={50}
         width={50}
-        className="w-5/12 aspect-square"
+        className={`${name ? "w-5/12" : "w-8/12"} aspect-square`}
       />
-      <span className="text-xs font-light">
+      {
+        name && <span className="text-xs font-light">
         {name}
       </span>
+      }
     </motion.div>
   );
 };

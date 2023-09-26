@@ -10,7 +10,7 @@ export default function ContactSection() {
     <motion.section
       {...fadeAnimation}
       transition={{ delay: 0.6 }}
-      className="relative flex w-full h-full flex-col text-light justify-center items-center text-center bg-dark bg-opacity-80"
+      className="relative flex w-full h-full flex-col text-light justify-center items-center text-center bg-dark bg-opacity-90"
     >
       <AnimatePresence>
         <motion.h1

@@ -123,7 +123,7 @@ const developerQualities: Array<DeveloperQuality> = [
   },
   {
     text:
-      'worked for many years in the field with different technologies I am a skilled <span class="text-primary-light opacity-30">Web Developer</span> Effective communicator, translating technical concepts into clear and concise language.',
+      'worked for many years in the field with different technologies I am a skilled <span class="text-primary-light opacity-80">Web Developer</span> Effective communicator, translating technical concepts into clear and concise language.',
     className: "h3",
     extraClassName: "ps-5 md:ps-0",
     before: 0,
