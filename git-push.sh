@@ -1,5 +1,5 @@
 git add .
 
-git commit -m "made projects modular"
+git commit -m "completed contact section"
 
 git push origin main

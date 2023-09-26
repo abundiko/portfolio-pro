@@ -1,9 +1,10 @@
 "use client";
 
-import { mySkills } from "@/data/mySkills";
+import Link from "next/link";
 import Skill from "./Skill";
 import { AnimatePresence, motion } from "framer-motion";
 import { fadeAnimation } from "./SkillsCard";
+import { contactLinks } from "@/data/contactLinks";
 
 export default function ContactSection() {
   return (
@@ -38,9 +39,10 @@ export default function ContactSection() {
           transition={{ delay: 1.9 }}
           className="w-[400px] grid grid-cols-4 gap-3 mt-3 max-w-[90vw]"
         >
-          {mySkills.map(
-            (item, i) =>
-              i < 4 && <Skill index={i} {...item} key={item.name + "contact"} />
+          {contactLinks.map((item, i) =>
+            <Link href={item.link} key={item.name}>
+              <Skill index={i} {...item} key={item.name + "contact"} />
+            </Link>
           )}
         </motion.div>
       </AnimatePresence>
