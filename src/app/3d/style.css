@@ -1,0 +1,25 @@
+@tailwind utilities;
+
+@layer utilities{
+  .side{
+
+    @apply w-full h-full absolute
+  }
+}
+
+.left{
+  transform: translateX(-40vw) translateZ(-40vw) rotateY(-90deg);
+}
+.right{
+  transform: translateX(40vw) translateZ(-40vw) rotateY(90deg);
+}
+.back{
+  transform: translateZ(-80vw) rotateY(-180deg);
+}
+.main{
+
+  transform-style: preserve-3d;
+  transform: rotateY(270deg);
+}
+.main:hover{
+}
